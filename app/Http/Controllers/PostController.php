@@ -27,7 +27,7 @@ class PostController extends Controller
             'body' => $request->body
         ]);
 
-        return to_route('posts.index');
+        return to_route('index');
     }
 
     public function show(Post $post)
