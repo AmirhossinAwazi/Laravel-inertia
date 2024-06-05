@@ -19,7 +19,7 @@ export default function Create() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        router.post('/posts', values)
+        router.post('/', values)
     }
 
     return (
