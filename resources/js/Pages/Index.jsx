@@ -9,7 +9,7 @@ export default function Index({ posts }) {
     return (
         <>
             <h1>My Super Blog</h1>
-            <Link href="/posts/create">create</Link>
+            <Link href="/create">create</Link>
             <hr />
             {posts && posts.map((post) => (
                 <div key={post.id}>
