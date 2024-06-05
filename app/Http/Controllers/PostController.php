@@ -27,7 +27,7 @@ class PostController extends Controller
             'body' => $request->body
         ]);
 
-        return to_route('index');
+        return to_route('posts.index');
     }
 
     public function show(Post $post)
@@ -51,12 +51,12 @@ class PostController extends Controller
             'body' => $request->body
         ]);
 
-        return to_route('index');
+        return to_route('posts.index');
     }
 
     public function destroy(Post $post)
     {
         $post->delete();
-        return to_route('index');
+        return to_route('posts.index');
     }
 }
