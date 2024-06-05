@@ -51,12 +51,12 @@ class PostController extends Controller
             'body' => $request->body
         ]);
 
-        return to_route('posts.index');
+        return to_route('index');
     }
 
     public function destroy(Post $post)
     {
         $post->delete();
-        return to_route('posts.index');
+        return to_route('index');
     }
 }
