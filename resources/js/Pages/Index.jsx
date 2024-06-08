@@ -9,13 +9,13 @@ export default function Index({ posts, time }) {
     return (
         <>
             <p>{time}</p>
-            <h1 class="mt-6 font-bold text-4xl">My Super Blog</h1>
+            <h1 class="mt-6 font-bold text-4xl">Home</h1>
             <ul class="list-disc">
                 <li>
-                    <Link href="/posts/create" as="button">create</Link>
+                    <Link href="/posts/create" as="button" class="text-blue-500 hover:underline">create</Link>
                 </li>
                 <li>
-                    <Link href="/posts" as="button">filan</Link>
+                    <Link href="/posts" as="button" class="text-blue-500 hover:underline">filan</Link>
                 </li>
             </ul>
             
