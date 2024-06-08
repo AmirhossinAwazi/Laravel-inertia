@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { router } from '@inertiajs/react'
 import Nav from '@/Components/Shared/Nav';
+import Layout from '@/Components/Shared/Layout';
 
 
 export default function Create() {
@@ -25,6 +26,7 @@ export default function Create() {
 
     return (
         <>
+        <Layout>
             <h1>Create Post</h1>
             <Nav/>
             <hr/>
@@ -36,6 +38,7 @@ export default function Create() {
                 <textarea id="body" value={values.body} onChange={handleChange}></textarea>
                 <button type="submit">Create</button>
             </form>
+            </Layout>
         </>
     )
 }

@@ -10,8 +10,8 @@ const Navigation = () => {
   });
 
   return (
-    <nav className="mt-6">
-      <ul className="list-disc">
+    <nav>
+      <ul className="list-disc flex space-x-4 list-inside">
         <li>
           <Link className={getClassNames('/posts/create')} href="/posts/create">Create</Link>
         </li>
