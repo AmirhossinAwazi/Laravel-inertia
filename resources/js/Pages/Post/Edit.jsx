@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { router } from '@inertiajs/react'
+import Nav from '@/Components/Shared/Nav';
 
 export default function Edit({ post }) {
     const [values, setValues] = useState({ 
@@ -24,6 +25,7 @@ export default function Edit({ post }) {
     return (
         <>
             <h1>Edit Post</h1>
+            <Nav/>
             <hr/>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="title">Title:</label>
