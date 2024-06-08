@@ -8,7 +8,6 @@ export default function Index({ posts, time }) {
 
     return (
         <>
-            <p>{time}</p>
             <h1 class="mt-6 font-bold text-4xl">Home</h1>
             <ul class="list-disc">
                 <li>
@@ -21,8 +20,7 @@ export default function Index({ posts, time }) {
                     <Link href="/logout" method="post" data={{ foo: 'bar' }} as="button" class="text-blue-500 hover:underline">Logout</Link>
                 </li>
             </ul>
-            
-            
+
             <hr />
             {posts && posts.map((post) => (
                 <div key={post.id}>
@@ -32,6 +30,13 @@ export default function Index({ posts, time }) {
                     <Link href={`/posts/${post.id}/edit`}>edit</Link>
                 </div>
             ))}
+
+            <div className="mt-64">
+                <p>{time}</p>
+                <Link href="/" class="text-blue-500" preserve-Scroll>
+                    Refresh
+                </Link>
+            </div>
         </>
     )
 }
