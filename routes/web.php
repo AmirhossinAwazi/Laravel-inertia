@@ -6,8 +6,7 @@ use Illuminate\Support\Sleep;
 use Inertia\Inertia;
 
 Route::get('/', function(){
-    // Sleep(2);
-    return Inertia::render('Index', [
+    return Inertia::render('Post/Index', [
         'time' => now()->toTimeString(),
     ]);
 });
