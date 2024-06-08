@@ -1,19 +1,29 @@
-import { Link } from "@inertiajs/inertia-react";
+import React from 'react';
+import { Link, usePage } from '@inertiajs/inertia-react';
+import classNames from 'classnames';
 
-export default function Nav(){
-    return (
-        <nav className="mt-6">
-        <ul class="list-disc">
+const Navigation = () => {
+  const { url } = usePage().props;
+
+  const getClassNames = (path) => classNames('text-blue-500 hover:underline', {
+    'font-bold underline': url === path,
+  });
+
+  return (
+    <nav className="mt-6">
+      <ul className="list-disc">
         <li>
-            <Link href="/posts/create" as="button" class="text-blue-500 hover:underline">Create</Link>
+          <Link className={getClassNames('/posts/create')} href="/posts/create">Create</Link>
         </li>
         <li>
-            <Link href="/posts" as="button" class="text-blue-500 hover:underline">Posts</Link>
+          <Link className={getClassNames('/posts')} href="/posts">Posts</Link>
         </li>
         <li>
-            <Link href="/logout" method="post" data={{ foo: 'bar' }} as="button" class="text-blue-500 hover:underline">Logout</Link>
+          <Link className={getClassNames('/logout')} href="/logout" method="post" data={{ foo: 'bar' }}>Logout</Link>
         </li>
-    </ul>
+      </ul>
     </nav>
-    );
-}
+  );
+};
+
+export default Navigation;
