@@ -6,7 +6,10 @@ use Illuminate\Support\Sleep;
 use Inertia\Inertia;
 
 Route::get('/', function(){
-    Sleep(2);
-    return Inertia::render('Index');
+    // Sleep(2);
+    return Inertia::render('Index', [
+        'time' => now()->toTimeString(),
+    ]);
 });
+
 Route::resource('/posts', PostController::class);
