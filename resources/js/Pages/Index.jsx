@@ -11,10 +11,10 @@ export default function Index({ posts, time }) {
             <h1 class="mt-6 font-bold text-4xl">Home</h1>
             <ul class="list-disc">
                 <li>
-                    <Link href="/posts/create" as="button" class="text-blue-500 hover:underline">create</Link>
+                    <Link href="/posts/create" as="button" class="text-blue-500 hover:underline">Create</Link>
                 </li>
                 <li>
-                    <Link href="/posts" as="button" class="text-blue-500 hover:underline">filan</Link>
+                    <Link href="/posts" as="button" class="text-blue-500 hover:underline">Posts</Link>
                 </li>
                 <li>
                     <Link href="/logout" method="post" data={{ foo: 'bar' }} as="button" class="text-blue-500 hover:underline">Logout</Link>
