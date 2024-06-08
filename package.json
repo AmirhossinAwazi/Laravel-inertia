@@ -21,6 +21,8 @@
     },
     "dependencies": {
         "@inertiajs/inertia-react": "^0.8.1",
-        "@inertiajs/progress": "^0.2.7"
+        "@inertiajs/progress": "^0.2.7",
+        "classnames": "^2.5.1",
+        "react-router-dom": "^6.23.1"
     }
 }
