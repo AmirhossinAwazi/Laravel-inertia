@@ -1,15 +1,25 @@
 import { Link } from '@inertiajs/inertia-react';
 import { router } from '@inertiajs/react'
 
-export default function Index({ posts }) {
+export default function Index({ posts, time }) {
     function deletePost(id) {
         router.delete(`/posts/${id}`);
     }
 
     return (
         <>
-            <h1>My Super Blog</h1>
-            <Link href="/posts/create">create</Link>
+            <p>{time}</p>
+            <h1 class="mt-6 font-bold text-4xl">My Super Blog</h1>
+            <ul class="list-disc">
+                <li>
+                    <Link href="/posts/create" as="button">create</Link>
+                </li>
+                <li>
+                    <Link href="/posts" as="button">filan</Link>
+                </li>
+            </ul>
+            
+            
             <hr />
             {posts && posts.map((post) => (
                 <div key={post.id}>
