@@ -10,14 +10,14 @@ class PostController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Index', [
+        return Inertia::render('Post/Index', [
             'posts' => Post::all()
         ]);
     }
 
     public function create()
     {
-        return Inertia::render('Create');
+        return Inertia::render('Post/Create');
     }
 
     public function store(Request $request)
@@ -32,14 +32,14 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        return Inertia::render('Show', [
+        return Inertia::render('Post/Show', [
             'post' => $post
         ]);
     }
 
     public function edit(Post $post)
     {
-        return Inertia::render('Edit', [
+        return Inertia::render('Post/Edit', [
             'post' => $post
         ]);
     }
