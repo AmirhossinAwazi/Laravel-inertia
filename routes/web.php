@@ -12,4 +12,9 @@ Route::get('/', function(){
     ]);
 });
 
+Route::post('/logout', function () {
+    sleep(2);
+    dd(request('foo'));
+});
+
 Route::resource('/posts', PostController::class);
