@@ -1,18 +1,15 @@
-import Layout from '@/Components/Shared/Layout';
 import { Link } from '@inertiajs/inertia-react';
-import { router } from '@inertiajs/react'
+import { router } from '@inertiajs/react';
+import Layout from '@/Components/Shared/Layout';
 
-export default function Index({ posts, time }) {
+const Index = ({ posts, time }) => {
     function deletePost(id) {
         router.delete(`/posts/${id}`);
     }
 
     return (
-        <Layout>
-            <h1 class="mt-6 text-3xl">
-                Home
-            </h1>
-
+        <>
+            <h1 className="mt-6 text-3xl">Home</h1>
             <hr />
             {posts && posts.map((post) => (
                 <div key={post.id}>
@@ -22,13 +19,16 @@ export default function Index({ posts, time }) {
                     <Link href={`/posts/${post.id}/edit`}>edit</Link>
                 </div>
             ))}
-
             <div className="mt-64">
                 <p>{time}</p>
-                <Link href="/" class="text-blue-500" preserve-Scroll>
+                <Link href="/" className="text-blue-500" preserveScroll>
                     Refresh
                 </Link>
             </div>
-        </Layout>
-    )
-}
+        </>
+    );
+};
+
+Index.layout = (page) => <Layout>{page}</Layout>;
+
+export default Index;

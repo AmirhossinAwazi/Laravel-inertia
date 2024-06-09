@@ -1,9 +1,9 @@
-import { usePage } from "@inertiajs/inertia-react"
-import Navigation from "./Navigation"
-
+import { usePage } from '@inertiajs/inertia-react';
+import Navigation from './Navigation';
 
 export const Layout = ({ children }) => {
-const user = usePage().props.auth.user;
+    const { auth } = usePage().props;
+    const user = auth.user;
 
     return (
         <div>
@@ -11,7 +11,7 @@ const user = usePage().props.auth.user;
                 <header className="flex justify-between">
                     <div className="flex items-center">
                         <h1 className="font-bold text-lg">My App</h1>
-                        <p className="text-sm ml-4">Welcome back, { user.username }!</p>
+                        <p className="text-sm ml-4">Welcome back, {user.username}!</p>
                     </div>
                     <Navigation />
                 </header>
@@ -22,6 +22,7 @@ const user = usePage().props.auth.user;
                 </div>
             </section>
         </div>
-    )
-}
-export default Layout
+    );
+};
+
+export default Layout;

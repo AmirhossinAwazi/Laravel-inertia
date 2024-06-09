@@ -3,7 +3,7 @@ import { router } from '@inertiajs/react'
 import Layout from '@/Components/Shared/Layout';
 
 
-export default function Create() {
+const Create = () => {
     const [values, setValues] = useState({ 
         title: "",
         body: ""
@@ -25,7 +25,6 @@ export default function Create() {
 
     return (
         <>
-        <Layout>
             <h1 class="mt-6 text-3xl">Create Post</h1>
             <hr/>
             <form onSubmit={handleSubmit}>
@@ -36,7 +35,10 @@ export default function Create() {
                 <textarea id="body" value={values.body} onChange={handleChange}></textarea>
                 <button type="submit">Create</button>
             </form>
-            </Layout>
         </>
-    )
-}
+    );
+};
+
+Create.layout = (page) => <Layout>{page}</Layout>;
+
+export default Create;
