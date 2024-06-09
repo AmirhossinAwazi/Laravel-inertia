@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { router } from '@inertiajs/react'
-import Nav from '@/Components/Shared/Nav';
 import Layout from '@/Components/Shared/Layout';
 
 
@@ -28,7 +27,6 @@ export default function Create() {
         <>
         <Layout>
             <h1>Create Post</h1>
-            <Nav/>
             <hr/>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="title">Title:</label>

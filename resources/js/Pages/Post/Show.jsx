@@ -1,12 +1,13 @@
-import Nav from "@/Components/Shared/Nav";
+import Layout from "@/Components/Shared/Layout";
 
 export default function Show({ post }) {
     return (
         <>
-            <h1>{post.title}</h1>
-            <Nav/>
-            <hr/>
-            <p>{post.body}</p>
+            <Layout>
+                <h1>{post.title}</h1>
+                <hr />
+                <p>{post.body}</p>
+            </Layout>
         </>
     )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { router } from '@inertiajs/react'
-import Nav from '@/Components/Shared/Nav';
+import Layout from '@/Components/Shared/Layout';
 
 export default function Edit({ post }) {
     const [values, setValues] = useState({ 
@@ -24,8 +24,8 @@ export default function Edit({ post }) {
 
     return (
         <>
+        <Layout>
             <h1>Edit Post</h1>
-            <Nav/>
             <hr/>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="title">Title:</label>
@@ -35,6 +35,7 @@ export default function Edit({ post }) {
                 <textarea id="body" value={values.body} onChange={handleChange}></textarea>
                 <button type="submit">Update</button>
             </form>
+            </Layout>
         </>
     )
 }
