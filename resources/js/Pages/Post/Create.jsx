@@ -26,7 +26,7 @@ export default function Create() {
     return (
         <>
         <Layout>
-            <h1>Create Post</h1>
+            <h1 class="mt-6 text-3xl">Create Post</h1>
             <hr/>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="title">Title:</label>
