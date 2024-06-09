@@ -1,22 +1,21 @@
-import Nav from '@/Components/Shared/Nav';
+import Navigation from "./Navigation"
 
-export default function Layout() {
+
+export const Layout = ({children}) => {
     return (
-        <>
+        <div>
             <section className="p-6 bg-gray-200">
                 <header className="flex justify-between">
                     <h1 className="font-bold text-lg">My App</h1>
-                    <Nav />
+                    <Navigation />
                 </header>
             </section>
             <section className="p-6">
                 <div className="max-w-3xl mx-auto">
-                <h1 class="mt-6 text-3xl">
-                    Home
-                </h1>
+                    {children}
                 </div>
             </section>
-
-        </>
+        </div>
     )
 }
+export default Layout
