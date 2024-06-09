@@ -1,12 +1,15 @@
 import Navigation from "./Navigation"
 
 
-export const Layout = ({children}) => {
+export const Layout = ({ children }) => {
     return (
         <div>
             <section className="p-6 bg-gray-200">
                 <header className="flex justify-between">
-                    <h1 className="font-bold text-lg">My App</h1>
+                    <div className="flex items-center">
+                        <h1 className="font-bold text-lg">My App</h1>
+                        <p className="text-sm ml-4">Welcome back</p>
+                    </div>
                     <Navigation />
                 </header>
             </section>
