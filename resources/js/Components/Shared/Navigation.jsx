@@ -12,7 +12,7 @@ const Navigation = () => {
     localStorage.setItem('activeLink', path);
   };
 
-  const getClassNames = (path) => classNames('text-blue-500 hover:underline', {
+  const getClassNames = (path) => classNames('textb-lack hover:underline', {
     'font-bold underline': activeLink === path,
   });
 
@@ -28,7 +28,7 @@ const Navigation = () => {
 
   return (
     <nav>
-      <ul className="list-disc flex space-x-4 list-inside">
+      <ul className="flex space-x-6">
         <li>
           <Link
             className={getClassNames('/posts/create')}
@@ -41,6 +41,11 @@ const Navigation = () => {
         <li>
           <Link className={getClassNames('/posts')} href="/posts" onClick={() => handleClick('/posts')}>
             Posts
+          </Link>
+        </li>
+        <li>
+          <Link className={getClassNames('/Settings')} href="/Settings" onClick={() => handleClick('/Settings')}>
+            Settings
           </Link>
         </li>
         <li>
