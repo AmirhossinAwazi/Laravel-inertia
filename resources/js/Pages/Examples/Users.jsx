@@ -1,4 +1,5 @@
 import Layout from '@/Components/Shared/Layout';
+import { Link } from '@inertiajs/inertia-react';
 
 const Users = ({ Users }) => {
 
@@ -25,7 +26,7 @@ const Users = ({ Users }) => {
                                             </td>
 
                                             <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <a href="#" className="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                <Link href={`/users/${user.id}/edit`} className="text-indigo-600 hover:text-indigo-900">Edit</Link>
                                             </td>
                                         </tr>
                                     ))}
