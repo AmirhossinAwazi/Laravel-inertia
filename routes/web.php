@@ -12,7 +12,11 @@ Route::get('/', function(){
 });
 
 Route::get('/Settings', function(){
-    return Inertia::render('Settings');
+    return Inertia::render('Examples/Settings');
+});
+
+Route::get('/Users', function(){
+    return Inertia::render('Examples/Users');
 });
 
 Route::post('/logout', function () {
