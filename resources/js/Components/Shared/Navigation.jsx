@@ -49,6 +49,11 @@ const Navigation = () => {
           </Link>
         </li>
         <li>
+          <Link className={getClassNames('/Users')} href="/Users" onClick={() => handleClick('/Users')}>
+            Users
+          </Link>
+        </li>
+        <li>
           <Link
             className={getClassNames('/logout')}
             href="/logout"
