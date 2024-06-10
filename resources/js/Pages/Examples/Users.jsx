@@ -1,10 +1,19 @@
 import Layout from '@/Components/Shared/Layout';
 
-const Users = () => {
+const Users = ({ Users }) => {
 
     return (
         <>
-            <h1 className="mt-6 text-3xl">Users</h1>
+            <h1 className="text-3xl">Users</h1>
+
+            <ul>
+                {Users.map(user => (
+                    <li key={user.id}>
+                        {user.name}
+                    </li>
+                ))}
+            </ul>
+
         </>
     );
 };
