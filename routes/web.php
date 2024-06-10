@@ -11,6 +11,10 @@ Route::get('/', function(){
     ]);
 });
 
+Route::get('/Settings', function(){
+    return Inertia::render('Settings');
+});
+
 Route::post('/logout', function () {
     sleep(2);
     dd(request('foo'));
