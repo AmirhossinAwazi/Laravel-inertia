@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Sleep;
@@ -16,14 +17,7 @@ Route::get('/Settings', function(){
     return Inertia::render('Examples/Settings');
 });
 
-Route::get('/Users', function(){
-    return Inertia::render('Examples/Users', [
-        'Users' => User::all()->map(fn($user) => [
-            'id' => $user->id,
-            'name' => $user->name,
-        ]),
-    ]);
-});
+Route::get('/Users', [UserController::class, 'index']);
 
 Route::post('/logout', function () {
     sleep(2);
