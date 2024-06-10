@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PostController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Sleep;
 use Inertia\Inertia;
@@ -16,7 +17,9 @@ Route::get('/Settings', function(){
 });
 
 Route::get('/Users', function(){
-    return Inertia::render('Examples/Users');
+    return Inertia::render('Examples/Users', [
+        'Users' => User::all(),
+    ]);
 });
 
 Route::post('/logout', function () {
