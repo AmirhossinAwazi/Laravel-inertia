@@ -18,7 +18,10 @@ Route::get('/Settings', function(){
 
 Route::get('/Users', function(){
     return Inertia::render('Examples/Users', [
-        'Users' => User::all(),
+        'Users' => User::all()->map(fn($user) => [
+            'id' => $user->id,
+            'name' => $user->name,
+        ]),
     ]);
 });
 
