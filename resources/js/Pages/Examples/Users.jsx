@@ -1,9 +1,10 @@
 import Layout from '@/Components/Shared/Layout';
 import { Link, usePage } from '@inertiajs/inertia-react';
+import { Inertia } from '@inertiajs/inertia';
 
 const Users = ({ Users, pagination }) => {
     const { props } = usePage();
-    const { Users } = props;
+    const { Users: usersData } = props;
 
     const handlePageChange = (page) => {
         Inertia.get('/Users', { page });
@@ -19,7 +20,7 @@ const Users = ({ Users, pagination }) => {
                         <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                             <table className="min-w-full divide-y- divide-gray-200">
                                 <tbody className="bg-white divide-y- divide-gray-200">
-                                    {Users.data.map(user => (
+                                    {usersData.data.map(user => (
                                         <tr key={user.id}>
                                             <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="flex items-center">
