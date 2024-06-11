@@ -9,9 +9,15 @@ use Inertia\Inertia;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::paginate(10);
+        $search = $request->input('search');
+
+        $users = User::query()
+            ->when($search, function ($query, $search) {
+                $query->where('name', 'like', "%{$search}%");
+            })
+            ->paginate(10);
 
         return Inertia::render('Examples/Users', [
             'Users' => UserResource::collection($users),
@@ -21,7 +27,7 @@ class UserController extends Controller
                 'total' => $users->total(),
                 'per_page' => $users->perPage(),
             ],
+            'searchQuery' => $search,
         ]);
-
     }
 }
