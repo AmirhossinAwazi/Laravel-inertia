@@ -49,7 +49,7 @@ const Navigation = () => {
           </Link>
         </li>
         <li>
-          <Link className={getClassNames('/Users')} href="/Users" onClick={() => handleClick('/Users')}>
+          <Link className={getClassNames('/Users/Index')} href="/Users/Index" onClick={() => handleClick('/Users/Index')}>
             Users
           </Link>
         </li>
