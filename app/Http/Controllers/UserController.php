@@ -20,7 +20,7 @@ class UserController extends Controller
             ->paginate(10)
             ->withQueryString();
 
-        return Inertia::render('Examples/Users', [
+        return Inertia::render('Users/Index', [
             'Users' => UserResource::collection($users),
             'pagination' => [
                 'current_page' => $users->currentPage(),
