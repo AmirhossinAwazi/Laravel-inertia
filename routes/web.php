@@ -23,6 +23,8 @@ Route::get('/Users/Create', function() {
     return Inertia::render('Users/Create');
 });
 
+Route::post('/Users', [UserController::class, 'store']);
+
 Route::post('/logout', function () {
     sleep(2);
     dd(request('foo'));
