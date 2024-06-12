@@ -3,14 +3,14 @@ import Layout from '@/Components/Shared/Layout';
 import { Link, usePage } from '@inertiajs/inertia-react';
 import { Inertia } from '@inertiajs/inertia';
 
-const Users = ({ Users, pagination, searchQuery }) => {
+const Index = ({ Users, pagination, searchQuery }) => {
     const [search, setSearch] = useState(searchQuery || '');
     const searchInputRef = useRef(null);
     const { props } = usePage();
 
     useEffect(() => {
         const delayDebounceFn = setTimeout(() => {
-            Inertia.get('/Users', { search }, {
+            Inertia.get('/Users/Index', { search }, {
                 preserveState: true,
                 replace: true
             });
@@ -26,7 +26,7 @@ const Users = ({ Users, pagination, searchQuery }) => {
     }, []);
 
     const handlePageChange = (page) => {
-        Inertia.get('/Users', { page, search }, {
+        Inertia.get('/Users/Index', { page, search }, {
             preserveState: true,
             replace: true
         });
@@ -100,6 +100,6 @@ const Users = ({ Users, pagination, searchQuery }) => {
     );
 };
 
-Users.layout = (page) => <Layout>{page}</Layout>;
+Index.layout = (page) => <Layout>{page}</Layout>;
 
-export default Users;
+export default Index;
