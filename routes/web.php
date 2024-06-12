@@ -14,10 +14,14 @@ Route::get('/', function(){
 });
 
 Route::get('/Settings', function(){
-    return Inertia::render('Examples/Settings');
+    return Inertia::render('Users/Settings');
 });
 
-Route::get('/Users', [UserController::class, 'index']);
+Route::get('/Users/Index', [UserController::class, 'index']);
+
+Route::get('/Users/Create', function() {
+    return Inertia::render('Users/Create');
+});
 
 Route::post('/logout', function () {
     sleep(2);
