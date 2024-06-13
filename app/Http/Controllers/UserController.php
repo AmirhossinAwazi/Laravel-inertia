@@ -42,7 +42,7 @@ class UserController extends Controller
             'password' => 'required|string|min:8|confirmed',
         ]);
 
-        User::created([
+        User::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'password' => Hash::make($request->input('password')),
