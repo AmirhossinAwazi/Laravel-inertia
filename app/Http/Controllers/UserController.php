@@ -34,6 +34,11 @@ class UserController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        return Inertia::render('Users/create');
+    }
+
     public function store(Request $request)
     {
         $request->validate([

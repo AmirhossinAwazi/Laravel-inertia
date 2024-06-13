@@ -17,16 +17,11 @@ Route::get('/Settings', function(){
     return Inertia::render('Users/Settings');
 });
 
-// Route::get('/Users/Index', [UserController::class, 'index']);
-
-Route::get('/Users/Create', function() {
-    return Inertia::render('Users/Create');
-});
 
 Route::get('/Users/Index', [UserController::class, 'index'])->name('users.index');
+Route::get('/Users/Create', [UserController::class, 'create'])->name('users.create');
 Route::post('/users', [UserController::class, 'store'])->name('users.store');
 
-// Route::post('/Users', [UserController::class, 'store']);
 
 Route::post('/logout', function () {
     sleep(2);
