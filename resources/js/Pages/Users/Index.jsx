@@ -35,8 +35,11 @@ const Index = ({ Users, pagination, searchQuery }) => {
     return (
         <>
             <div className="flex justify-between mb-6">
-                <h1 className="text-3xl">Users</h1>
-                <input 
+                <div className="flex items-center">
+                    <h1 className="text-3xl">Users</h1>
+                    <Link className="text-blue-500 ml-3" href="/Users/Create" >Create New User</Link>
+                </div>
+                <input
                     ref={searchInputRef}
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
