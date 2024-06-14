@@ -1,23 +1,34 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Layout from '@/Components/Shared/Layout';
 import { Link, usePage } from '@inertiajs/inertia-react';
 import { Inertia } from '@inertiajs/inertia';
+import { debounce } from 'lodash';
 
 const Index = ({ Users, pagination, searchQuery }) => {
     const [search, setSearch] = useState(searchQuery || '');
     const searchInputRef = useRef(null);
     const { props } = usePage();
 
-    useEffect(() => {
-        const delayDebounceFn = setTimeout(() => {
-            Inertia.get('/Users/Index', { search }, {
+    // Debounced search function
+    const debouncedSearch = useCallback(
+        debounce((value) => {
+            Inertia.get('/Users/Index', { search: value }, {
                 preserveState: true,
                 replace: true
             });
-        }, 300);
+        }, 500),
+        []
+    );
 
-        return () => clearTimeout(delayDebounceFn);
-    }, [search]);
+    useEffect(() => {
+        // Call the debounced search function when search changes
+        debouncedSearch(search);
+
+        // Cleanup function to clear pending debounced calls
+        return () => {
+            debouncedSearch.cancel();
+        };
+    }, [search, debouncedSearch]);
 
     useEffect(() => {
         if (searchInputRef.current) {
@@ -37,7 +48,7 @@ const Index = ({ Users, pagination, searchQuery }) => {
             <div className="flex justify-between mb-6">
                 <div className="flex items-center">
                     <h1 className="text-3xl">Users</h1>
-                    <Link className="text-blue-500 ml-3" href="/Users/Create" >Create New User</Link>
+                    <Link className="text-blue-500 ml-3" href="/Users/Create">Create New User</Link>
                 </div>
                 <input
                     ref={searchInputRef}
