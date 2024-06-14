@@ -11,15 +11,12 @@ Route::get('/', function(){
     ]);
 });
 
+Route::resource('/Users', UserController::class);
 
-Route::get('/Users/Index', [UserController::class, 'index'])->name('users.index');
-Route::get('/Users/Create', [UserController::class, 'create'])->name('users.create');
-Route::post('/users', [UserController::class, 'store'])->name('users.store');
-
+Route::resource('/posts', PostController::class);
 
 Route::post('/logout', function () {
     sleep(2);
     dd(request('foo'));
 });
 
-Route::resource('/posts', PostController::class);
