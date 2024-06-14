@@ -44,11 +44,6 @@ const Navigation = () => {
           </Link>
         </li>
         <li>
-          <Link className={getClassNames('/Settings')} href="/Settings" onClick={() => handleClick('/Settings')}>
-            Settings
-          </Link>
-        </li>
-        <li>
           <Link className={getClassNames('/Users/Index')} href="/Users/Index" onClick={() => handleClick('/Users/Index')}>
             Users
           </Link>
