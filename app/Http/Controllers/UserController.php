@@ -19,8 +19,29 @@ class UserController extends Controller
             ->when($search, function ($query, $search) {
                 $query->where('name', 'like', "%{$search}%");
             })
-            ->paginate(10)
-            ->withQueryString();
+            ->paginate(10);
+
+        return Inertia::render('Users/Index', [
+            'Users' => UserResource::collection($users),
+            'pagination' => [
+                'current_page' => $users->currentPage(),
+                'last_page' => $users->lastPage(),
+                'total' => $users->total(),
+                'per_page' => $users->perPage(),
+            ],
+            'searchQuery' => $search,
+        ]);
+    }
+
+    public function show(Request $request)
+    {
+        $search = $request->input('search');
+
+        $users = User::query()
+            ->when($search, function ($query, $search) {
+                $query->where('name', 'like', "%{$search}%");
+            })
+            ->paginate(10);
 
         return Inertia::render('Users/Index', [
             'Users' => UserResource::collection($users),
