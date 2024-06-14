@@ -48,7 +48,7 @@ const Index = ({ Users, pagination, searchQuery }) => {
             <div className="flex justify-between mb-6">
                 <div className="flex items-center">
                     <h1 className="text-3xl">Users</h1>
-                    <Link className="text-blue-500 ml-3" href="/Users/Create">Create New User</Link>
+                    <Link className="text-blue-500 ml-3" href="/Users/create">Create New User</Link>
                 </div>
                 <input
                     ref={searchInputRef}
