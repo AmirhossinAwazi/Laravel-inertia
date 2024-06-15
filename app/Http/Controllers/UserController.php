@@ -56,9 +56,11 @@ class UserController extends Controller
         ]);
     }
 
-    public function edit()
+    public function edit(User $user)
     {
-        return Inertia::render('Users/Edit');
+        return Inertia::render('Users/Edit', [
+            'user' => new UserResource($user)
+        ]);
     }
 
     public function update(UpdateUserRequest $request, User $user)
