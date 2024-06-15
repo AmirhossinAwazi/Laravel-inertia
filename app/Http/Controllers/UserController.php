@@ -62,7 +62,7 @@ class UserController extends Controller
 
     public function edit()
     {
-        //
+        return Inertia::render('Users/Edit');
     }
 
     public function update()
