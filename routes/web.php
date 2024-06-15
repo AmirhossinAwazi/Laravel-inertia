@@ -11,7 +11,7 @@ Route::get('/', function(){
     ]);
 });
 
-Route::resource('/Users', UserController::class);
+Route::resource('users', UserController::class);
 
 Route::resource('/posts', PostController::class);
 
