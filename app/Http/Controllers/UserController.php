@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -60,7 +61,7 @@ class UserController extends Controller
         return Inertia::render('Users/Edit');
     }
 
-    public function update()
+    public function update(UpdateUserRequest $request, )
     {
         //
     }
