@@ -61,9 +61,14 @@ class UserController extends Controller
         return Inertia::render('Users/Edit');
     }
 
-    public function update(UpdateUserRequest $request, )
+    public function update(UpdateUserRequest $request, User $user)
     {
-        //
+        $user->update([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => $request->input('password') ? Hash::make($request->input('password')) : $user->password,
+        ]);
+        return Redirect::route('users.index')->with('success', 'User updated successfully.');
     }
 
     public function destroy()
